@@ -9,7 +9,7 @@ function App() {
       <Toaster position="top-right" />
       <nav className="bg-gray-800 text-white p-4 space-x-4">
         <Link to="/" className="hover:underline">Text Submit</Link>
-        <Link to="/upload" className="hover:underline">Upload Folder</Link>
+        <Link to="/upload" className="hover:underline">Upload Files</Link>
       </nav>
       <Routes>
         <Route path="/" element={<TextSubmitApp />} />
