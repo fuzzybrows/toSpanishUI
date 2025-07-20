@@ -36,11 +36,11 @@ function TextSubmitApp() {
 
   return (
     <div className="p-6 max-w-xl mx-auto space-y-4">
-      <h1 className="text-xl font-bold">Text Submission App</h1>
+      <h1 className="text-xl font-bold">Song Lyrics Translation App</h1>
       <textarea
         className="w-full p-2 border rounded"
         rows={6}
-        placeholder="Enter your text here..."
+        placeholder="Enter/Paste your song lyrics here..."
         value={inputText}
         onChange={(e) => setInputText(e.target.value)}
       />
@@ -57,7 +57,7 @@ function TextSubmitApp() {
         rows={6}
         value={responseText}
         readOnly
-        placeholder="Response will appear here..."
+        placeholder="Propresenter-ready text with spanish translations will appear here..."
       />
       <button
         onClick={handleCopy}
