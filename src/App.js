@@ -1,7 +1,8 @@
 import React from "react";
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 import { Toaster } from "react-hot-toast";
-import {TextSubmitApp, UploadFilesPage} from "./toSpanish";
+import {TextSubmitApp} from "./toSpanish/textSubmit";
+import {UploadFilesPage} from "./toSpanish/uploadFiles";
 
 function App() {
   return (
