@@ -4,7 +4,8 @@ import {API_BASE_URL} from "../constants";
 import {toast} from "react-hot-toast";
 
 import {useDispatch, useSelector} from "react-redux";
-import {addConvertedSong} from "../store/convertedSongsSlice";
+import {addConvertedSong, removeConvertedSong} from "../store/convertedSongsSlice";
+import {X} from "lucide-react";
 
 function TextSubmitApp() {
     const [inputText, setInputText] = useState("");
@@ -129,10 +130,17 @@ function TextSubmitApp() {
                     <>
                         <ul className="space-y-2">
                             {convertedSongs.map((song, idx) => (
-                                <li key={idx}>
+                                <li key={idx} className="flex items-center ">
+                                    <button
+                                        onClick={() => dispatch(removeConvertedSong(idx))}
+                                        className="text-red-500 hover:text-red-700 mr-1"
+                                        aria-label="Delete song"
+                                    >
+                                        <X size={16}/>
+                                    </button>
                                     <button
                                         onClick={() => downloadAsText(song.title, song.content)}
-                                        className="text-blue-600 hover:underline"
+                                        className="text-blue-600 hover:underline ml-2"
                                     >
                                         {song.title}
                                     </button>

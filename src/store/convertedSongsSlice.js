@@ -5,12 +5,13 @@ const convertedSongsSlice = createSlice({
   initialState: [],
   reducers: {
     addConvertedSong: (state, action) => {
-      // action.payload = { title, content }
       state.push(action.payload);
-    }
-  }
+    },
+    removeConvertedSong: (state, action) => {
+      return state.filter((_, index) => index !== action.payload);
+    },
+  },
 });
 
-export const { addConvertedSong } = convertedSongsSlice.actions;
+export const { addConvertedSong, removeConvertedSong } = convertedSongsSlice.actions;
 export default convertedSongsSlice.reducer;
-
