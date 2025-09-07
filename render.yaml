@@ -1,0 +1,35 @@
+# Exported from Render on 2025-09-07T01:54:23Z
+services:
+- type: web
+  name: toSpanishUI
+  runtime: node
+  repo: https://github.com/fuzzybrows/toSpanishUI
+  plan: free
+  envVars:
+  - key: NPM_AUTH_TOKEN
+    sync: false
+  - key: NODE_VERSION
+    sync: false
+  - key: REACT_APP_TO_SPANISH_API_BASE_URL
+    sync: false
+  region: oregon
+  buildCommand: npm install && npm run build && npm install -g serve
+  startCommand: serve -s build
+  autoDeployTrigger: commit
+- type: web
+  name: toSpanishUI-dev
+  runtime: node
+  repo: https://github.com/fuzzybrows/toSpanishUI
+  plan: free
+  envVars:
+  - key: NPM_AUTH_TOKEN
+    sync: false
+  - key: NODE_VERSION
+    sync: false
+  - key: REACT_APP_TO_SPANISH_API_BASE_URL
+    sync: false
+  region: oregon
+  buildCommand: npm install && npm run build && npm install -g serve
+  startCommand: serve -s build
+  autoDeployTrigger: commit
+version: "1"
